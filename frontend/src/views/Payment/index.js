@@ -13,7 +13,7 @@ import './style.scss';
 function Payment() {
 	const history = useHistory();
 	const [cardInfo, setCardInfo] = useState({
-		number: null,
+		number: '',
 		name: '',
 		month: null,
 		year: null,
@@ -43,8 +43,14 @@ function Payment() {
 	// 	}
 	// };
 
+	const verifyNumericOnly = (input) => {
+		const num = /^[0-9]+$/;
+		if (input === '' || num.test(input)) return true;
+	};
+
 	const handleCardNumberInput = (number) => {
-		setCardInfo({ ...cardInfo, number: Number(number.target.value) });
+		if (verifyNumericOnly(number.target.value))
+			setCardInfo({ ...cardInfo, number: number.target.value });
 	};
 
 	const handleCardNameInput = (name) => {
@@ -157,9 +163,10 @@ function Payment() {
 						<TextField
 							label='Card Number'
 							placeholder='#### #### #### ####'
-							type='tel'
+							type='text'
 							maxLength='16'
 							icon={Assets.icons.creditCard.default}
+							value={cardInfo.number}
 							onChange={handleCardNumberInput}
 						/>
 					</div>
