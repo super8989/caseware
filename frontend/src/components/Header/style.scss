@@ -1,0 +1,19 @@
+@import '../../sass/main.scss';
+
+.Header {
+	width: 100%;
+	height: 68px;
+	background-color: $color-primary-400;
+	border-radius: 13px 13px 0px 0px;
+	display: flex;
+	align-items: center;
+	color: $color-white;
+	font-weight: 600;
+	font-size: 1.5rem;
+
+	span {
+		margin-left: 1.375rem;
+		display: flex;
+		align-items: center;
+	}
+}
