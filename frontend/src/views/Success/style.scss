@@ -1,0 +1,35 @@
+@import '../../sass/main';
+
+.Success {
+	width: 540px;
+	height: 340px;
+	border: 1px solid $color-black;
+	background-color: $color-white;
+	border-radius: 16px;
+	position: relative;
+	box-shadow: -2px 2px 0px 5px $color-black;
+
+	&__icon {
+		position: absolute;
+		top: 106px;
+		left: 250px;
+	}
+
+	&__text-main {
+		position: absolute;
+		top: 158px;
+		left: 205.5px;
+		font-weight: 600;
+		font-size: 1.5rem;
+		line-height: 36px;
+	}
+
+	&__text-sub {
+		position: absolute;
+		top: 206px;
+		left: 123px;
+		font-weight: 500;
+		font-size: 1.125rem;
+		line-height: 27px;
+	}
+}
