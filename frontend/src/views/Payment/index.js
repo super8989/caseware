@@ -92,7 +92,7 @@ function Payment() {
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify(body),
 			}).then((result) => {
-				console.log('result', result);
+				history.push('/success');
 			});
 		} catch (error) {
 			console.error(error.message);
