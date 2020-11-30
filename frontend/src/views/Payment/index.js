@@ -19,29 +19,33 @@ function Payment() {
 		year: null,
 		cvv: '',
 	});
+	const [cardType, setCardType] = useState('');
 
 	const [error, setError] = useState(false);
 
-	// const checkCardType = (digit) => {
-	// 	console.log(digit);
-	// 	const firstDigit = digit.charAt(0);
-	// 	switch (firstDigit) {
-	// 		case '3':
-	// 			setCardType('amex');
-	// 			break;
-	// 		case '4':
-	// 			setCardType('visa');
-	// 			break;
-	// 		case '5':
-	// 			setCardType('master');
-	// 			break;
-	// 		case '6':
-	// 			setCardType('discover');
-	// 			break;
-	// 		default:
-	// 			setError(true);
-	// 	}
-	// };
+	const checkCardType = (digit) => {
+		console.log(digit);
+		const firstDigit = digit.charAt(0);
+		switch (firstDigit) {
+			case '3':
+				setCardType('amex');
+				break;
+			case '4':
+				setCardType('visa');
+				break;
+			case '5':
+				setCardType('master');
+				break;
+			case '6':
+				setCardType('discover');
+				break;
+			case '':
+				setCardType('');
+				break;
+			default:
+				setCardType('');
+		}
+	};
 
 	const verifyNumeric = (input) => {
 		const num = /^[0-9]+$/;
@@ -49,6 +53,8 @@ function Payment() {
 	};
 
 	const handleCardNumberInput = (number) => {
+		checkCardType(cardInfo.number);
+
 		if (verifyNumeric(number.target.value))
 			setCardInfo({ ...cardInfo, number: number.target.value });
 	};
