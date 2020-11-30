@@ -17,7 +17,7 @@ function Payment() {
 		name: '',
 		month: null,
 		year: null,
-		cvv: null,
+		cvv: '',
 	});
 
 	const [error, setError] = useState(false);
@@ -43,13 +43,13 @@ function Payment() {
 	// 	}
 	// };
 
-	const verifyNumericOnly = (input) => {
+	const verifyNumeric = (input) => {
 		const num = /^[0-9]+$/;
 		if (input === '' || num.test(input)) return true;
 	};
 
 	const handleCardNumberInput = (number) => {
-		if (verifyNumericOnly(number.target.value))
+		if (verifyNumeric(number.target.value))
 			setCardInfo({ ...cardInfo, number: number.target.value });
 	};
 
@@ -66,7 +66,8 @@ function Payment() {
 	};
 
 	const handleCvvInput = (digit) => {
-		setCardInfo({ ...cardInfo, cvv: Number(digit.target.value) });
+		if (verifyNumeric(digit.target.value))
+			setCardInfo({ ...cardInfo, cvv: digit.target.value });
 	};
 
 	const isFormComplete = () => {
@@ -175,6 +176,7 @@ function Payment() {
 							label='Cardholder Name'
 							placeholder='Name on the card'
 							type='text'
+							value={cardInfo.name}
 							icon={Assets.icons.user.default}
 							onChange={handleCardNameInput}
 						/>
@@ -191,6 +193,7 @@ function Payment() {
 							label='CVV'
 							type='tel'
 							maxLength='4'
+							value={cardInfo.cvv}
 							onChange={handleCvvInput}
 						/>
 					</div>
