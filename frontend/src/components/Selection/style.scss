@@ -1,0 +1,56 @@
+@import '../../sass/main';
+
+.selection {
+	&__month {
+		position: absolute;
+		left: 0;
+	}
+
+	&__year {
+		position: absolute;
+		left: 125px;
+	}
+
+	label {
+		font-size: 0.875rem;
+		line-height: 20px;
+		font-weight: 400;
+	}
+
+	select {
+		width: 115px;
+		height: 40px;
+		top: 30px;
+		border: 2px solid $color-black;
+		border-radius: 4px;
+		box-sizing: border-box;
+
+		&:focus {
+			outline: none;
+			box-shadow: -2px 2px 0px $color-black;
+		}
+	}
+
+	&.error {
+		select {
+			border: 2px solid $color-red;
+			border-radius: 4px;
+			box-sizing: border-box;
+		}
+	}
+
+	&__error-message {
+		display: flex;
+		align-items: center;
+		position: absolute;
+		width: 180px;
+		top: 80px;
+
+		span {
+			color: $color-red;
+			font-size: 0.875rem;
+			font-weight: 400;
+			margin-left: 6px;
+		}
+	}
+}
