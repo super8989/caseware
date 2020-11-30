@@ -1,0 +1,61 @@
+@import '../../sass/main';
+
+.Order {
+	width: 540px;
+	height: 589px;
+	border: 1px solid $color-black;
+	background-color: white;
+	border-radius: 16px;
+	position: relative;
+	box-shadow: -2px 2px 0px 5px $color-black;
+
+	&__image {
+		width: 294px;
+		height: 294px;
+		background-color: $color-primary-50;
+		position: absolute;
+		top: 100px;
+		left: 123px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__description {
+		position: absolute;
+		top: 426px;
+		display: flex;
+		width: 100%;
+		justify-content: space-between;
+
+		&--item {
+			display: flex;
+			flex-direction: column;
+			margin-left: 2rem;
+			font-weight: 500;
+
+			&-title {
+				font-size: 1.5rem;
+			}
+
+			&-category {
+				font-size: 1.125rem;
+				color: $color-medium-emphasis;
+			}
+		}
+
+		&--price {
+			margin-right: 2rem;
+			font-weight: 600;
+			font-size: 1.5rem;
+			color: $color-black;
+		}
+	}
+
+	&__payment-button {
+		width: 476px;
+		position: absolute;
+		top: 517px;
+		left: 32px;
+	}
+}
