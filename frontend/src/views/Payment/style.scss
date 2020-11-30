@@ -1,0 +1,144 @@
+@import '../../sass/main';
+
+.Payment {
+	width: 800px;
+	height: 528px;
+	border: 1px solid $color-black;
+	background-color: white;
+	border-radius: 16px;
+	position: relative;
+	box-shadow: -2px 2px 0px 5px $color-black;
+
+	& .dollar-sign {
+		margin-right: 0.875rem;
+	}
+
+	&__left {
+		color: $color-high-emphasis;
+
+		&--amount {
+			display: flex;
+			text-align: center;
+			flex-direction: column;
+			position: absolute;
+			top: 168px;
+			left: 115px;
+
+			&--text {
+				font-size: 1.125rem;
+				font-weight: 500;
+				line-height: 27px;
+			}
+
+			&--price {
+				font-size: 2.125rem;
+				font-weight: 500;
+				line-height: 41.15px;
+			}
+		}
+
+		&--order {
+			display: flex;
+			text-align: center;
+			flex-direction: column;
+			position: absolute;
+			top: 304px;
+			left: 114px;
+
+			&--text {
+				font-size: 1.125rem;
+				font-weight: 500;
+				line-height: 27px;
+			}
+
+			&--number {
+				font-size: 2.125rem;
+				font-weight: 500;
+				line-height: 41.15px;
+			}
+		}
+
+		&--back {
+			width: 92px;
+			position: absolute;
+			top: 456px;
+			left: 32px;
+
+			& .arrow-left {
+				position: absolute;
+				top: 14.17px;
+				left: 12.17px;
+			}
+
+			&--text {
+				position: absolute;
+				top: 13px;
+				right: 16px;
+			}
+		}
+	}
+
+	&__right {
+		&--credit-cards {
+			& .visa {
+				position: absolute;
+				top: 92px;
+				left: 368px;
+			}
+
+			& .discover {
+				position: absolute;
+				top: 107px;
+				left: 483px;
+			}
+
+			& .amex {
+				position: absolute;
+				top: 92px;
+				left: 588px;
+			}
+
+			& .master {
+				position: absolute;
+				top: 92px;
+				left: 708px;
+			}
+		}
+
+		&--card-info {
+			&--number {
+				width: 400px;
+				position: absolute;
+				top: 156px;
+				left: 368px;
+			}
+
+			&--name {
+				width: 400px;
+				position: absolute;
+				top: 256px;
+				left: 368px;
+			}
+
+			&--expiry {
+				position: absolute;
+				top: 356px;
+				left: 368px;
+			}
+
+			&--cvv {
+				width: 129px;
+				position: absolute;
+				top: 356px;
+				left: 639px;
+			}
+		}
+	}
+
+	&__submit {
+		width: 400px;
+		position: absolute;
+		bottom: 32px;
+		right: 32px;
+	}
+}
